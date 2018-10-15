@@ -1,0 +1,140 @@
+﻿html, body {margin: 0; height: 100%; overflow: hidden}
+
+.fixed {
+    position: fixed;
+}
+
+.collapsible-header img {
+    width: 15%;
+    position: relative;
+    top: 10px;
+    margin-right: 10px;
+}
+
+.mainContainerBody {
+    background: #b1c5a8;
+}
+
+body {
+    background: #37563c;
+}
+
+.sidebar {
+    background: #709d5c;
+    color: #F5F5F5;
+}
+
+.sidebar-inner {
+    min-height: 100vh;
+}
+
+.sidebar h4 {
+    color: #F5F5F5;
+}
+
+.sidebar p {
+    color: #E0E0E0;
+}
+
+.sidebar label {
+    color: #E0E0E0;
+}
+
+.content-inner {
+    padding-top: 1em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+
+.logo {
+    width: 100%;
+}
+
+.logo-img {
+    width: 100%;
+    margin-top: 14px;
+}
+
+.btn {
+    background: #03A9F4;
+}
+
+    .btn:hover {
+        background: #0277BD;
+    }
+
+nav ul a,
+nav .brand-logo {
+    color: #444;
+}
+
+p {
+    line-height: 2rem;
+}
+
+.downloadSection {
+    font-weight: 600;
+}
+
+.downloadSection img{
+    margin-top: 7px;
+    margin-right: 20px;
+    width: 30px;
+    height:28px;
+}
+
+.collapsible-body-settings {
+    background: #37563c !important;
+    padding: 8px;
+}
+
+.zero-padding {
+    padding: 0px !important;
+}
+
+.progress-graph {
+    position: absolute;
+    top: 50%;
+    left: 36%;
+    width: 50%;
+}
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after {
+    background-color: #43b05c !important;
+    border: #43b05c !important;
+}
+
+[type="radio"]:not(:checked) + label:before, [type="radio"]:not(:checked) + label:after {
+    border: 2px solid #b1c5a8 !important;
+}
+
+#form1 {
+    margin-top: -10px;
+}
+
+.side-nav li a {
+    text-decoration: none;
+}
+
+#searchResults2 {
+    background-color: #666666;
+}
+
+#searchResults {
+    background-color: #666666;
+}
+
+.right li a {
+    padding-right: 2em;
+    text-decoration: none;
+}
+
+.mainContainerHeader {
+    display: block;
+    cursor: pointer;
+    min-height: 3rem;
+    line-height: 3rem;
+    padding: 0 1rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
