@@ -63,14 +63,13 @@
             // 
             // errorLabel
             // 
-            this.errorLabel.AutoSize = true;
             this.errorLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(162, 150);
+            this.errorLabel.Location = new System.Drawing.Point(77, 150);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(35, 13);
+            this.errorLabel.Size = new System.Drawing.Size(200, 13);
             this.errorLabel.TabIndex = 2;
             this.errorLabel.Text = "label1";
-            this.errorLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.errorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.errorLabel.Visible = false;
             // 
             // label1

@@ -17,5 +17,9 @@ namespace ComWinApp
             InitializeComponent();
         }
 
+        private void componentPath_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

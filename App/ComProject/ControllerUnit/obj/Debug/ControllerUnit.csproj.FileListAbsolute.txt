@@ -4,10 +4,3 @@ C:\Users\Vlado\Documents\Visual Studio 2015\Projects\ComProject\ControllerUnit\b
 C:\Users\Vlado\Documents\Visual Studio 2015\Projects\ComProject\ControllerUnit\bin\Debug\MySql.Data.xml
 C:\Users\Vlado\Documents\Visual Studio 2015\Projects\ComProject\ControllerUnit\obj\Debug\ControllerUnit.dll
 C:\Users\Vlado\Documents\Visual Studio 2015\Projects\ComProject\ControllerUnit\obj\Debug\ControllerUnit.pdb
-C:\Users\Vlado\Desktop\MDH2\Period 1\Component Technologies\cdt401-online-component-repository\cdt401-online-component-repository\App\ComProject\ControllerUnit\bin\Debug\ControllerUnit.dll
-C:\Users\Vlado\Desktop\MDH2\Period 1\Component Technologies\cdt401-online-component-repository\cdt401-online-component-repository\App\ComProject\ControllerUnit\bin\Debug\ControllerUnit.pdb
-C:\Users\Vlado\Desktop\MDH2\Period 1\Component Technologies\cdt401-online-component-repository\cdt401-online-component-repository\App\ComProject\ControllerUnit\bin\Debug\MySql.Data.dll
-C:\Users\Vlado\Desktop\MDH2\Period 1\Component Technologies\cdt401-online-component-repository\cdt401-online-component-repository\App\ComProject\ControllerUnit\bin\Debug\MySql.Data.xml
-C:\Users\Vlado\Desktop\MDH2\Period 1\Component Technologies\cdt401-online-component-repository\cdt401-online-component-repository\App\ComProject\ControllerUnit\obj\Debug\ControllerUnit.csprojResolveAssemblyReference.cache
-C:\Users\Vlado\Desktop\MDH2\Period 1\Component Technologies\cdt401-online-component-repository\cdt401-online-component-repository\App\ComProject\ControllerUnit\obj\Debug\ControllerUnit.dll
-C:\Users\Vlado\Desktop\MDH2\Period 1\Component Technologies\cdt401-online-component-repository\cdt401-online-component-repository\App\ComProject\ControllerUnit\obj\Debug\ControllerUnit.pdb
