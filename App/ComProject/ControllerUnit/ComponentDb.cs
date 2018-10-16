@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ControllerUnit
 {
-    public class Class1
+    public class ComponentDb
     {
     }
 }
