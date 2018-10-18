@@ -53,10 +53,19 @@
     <Compile Include="AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inspection.Designer.cs">
+      <DependentUpon>Inspection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inspection.resx">
+      <DependentUpon>Inspection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,6 +93,10 @@
     <ProjectReference Include="..\ControllerUnit\ControllerUnit.csproj">
       <Project>{a53e7c68-0bef-4433-950a-b0a059729f99}</Project>
       <Name>ControllerUnit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NETComponentInspector\NETComponentInspector.csproj">
+      <Project>{b3b32130-706a-466b-848e-371da7475c6e}</Project>
+      <Name>NETComponentInspector</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

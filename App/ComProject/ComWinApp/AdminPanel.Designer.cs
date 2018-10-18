@@ -31,9 +31,11 @@
             this.componentList = new System.Windows.Forms.ListBox();
             this.deleteButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.confirmButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.comRadio = new System.Windows.Forms.RadioButton();
+            this.netRadio = new System.Windows.Forms.RadioButton();
+            this.javaRadio = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.componentDescription = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,11 +49,11 @@
             this.addButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.confirmButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
             this.downloadButton = new System.Windows.Forms.Button();
             this.inspectButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // componentList
@@ -61,6 +63,7 @@
             this.componentList.Name = "componentList";
             this.componentList.Size = new System.Drawing.Size(225, 277);
             this.componentList.TabIndex = 0;
+            this.componentList.SelectedIndexChanged += new System.EventHandler(this.componentList_SelectedIndexChanged);
             // 
             // deleteButton
             // 
@@ -73,11 +76,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.confirmButton);
             this.groupBox1.Controls.Add(this.cancelButton);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.componentDescription);
             this.groupBox1.Controls.Add(this.label4);
@@ -95,43 +96,61 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Component Info";
             // 
-            // radioButton3
+            // confirmButton
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(260, 136);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(49, 17);
-            this.radioButton3.TabIndex = 12;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "COM";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.confirmButton.Location = new System.Drawing.Point(226, 278);
+            this.confirmButton.Name = "confirmButton";
+            this.confirmButton.Size = new System.Drawing.Size(133, 23);
+            this.confirmButton.TabIndex = 13;
+            this.confirmButton.Text = "Confirm";
+            this.confirmButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // cancelButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(193, 136);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(47, 17);
-            this.radioButton2.TabIndex = 11;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "NET";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.cancelButton.Location = new System.Drawing.Point(19, 278);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(133, 23);
+            this.cancelButton.TabIndex = 5;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // comRadio
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(119, 136);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(51, 17);
-            this.radioButton1.TabIndex = 10;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "JAVA";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.comRadio.AutoSize = true;
+            this.comRadio.Location = new System.Drawing.Point(149, 12);
+            this.comRadio.Name = "comRadio";
+            this.comRadio.Size = new System.Drawing.Size(49, 17);
+            this.comRadio.TabIndex = 12;
+            this.comRadio.TabStop = true;
+            this.comRadio.Text = "COM";
+            this.comRadio.UseVisualStyleBackColor = true;
+            // 
+            // netRadio
+            // 
+            this.netRadio.AutoSize = true;
+            this.netRadio.Location = new System.Drawing.Point(87, 12);
+            this.netRadio.Name = "netRadio";
+            this.netRadio.Size = new System.Drawing.Size(47, 17);
+            this.netRadio.TabIndex = 11;
+            this.netRadio.TabStop = true;
+            this.netRadio.Text = "NET";
+            this.netRadio.UseVisualStyleBackColor = true;
+            // 
+            // javaRadio
+            // 
+            this.javaRadio.AutoSize = true;
+            this.javaRadio.Location = new System.Drawing.Point(15, 12);
+            this.javaRadio.Name = "javaRadio";
+            this.javaRadio.Size = new System.Drawing.Size(51, 17);
+            this.javaRadio.TabIndex = 10;
+            this.javaRadio.TabStop = true;
+            this.javaRadio.Text = "JAVA";
+            this.javaRadio.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 136);
+            this.label5.Location = new System.Drawing.Point(16, 147);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 13);
             this.label5.TabIndex = 9;
@@ -223,6 +242,7 @@
             this.addButton.TabIndex = 3;
             this.addButton.Text = "Add Component";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // editButton
             // 
@@ -241,24 +261,6 @@
             this.textBox1.TabIndex = 13;
             this.textBox1.Text = "Search for component...";
             // 
-            // confirmButton
-            // 
-            this.confirmButton.Location = new System.Drawing.Point(226, 278);
-            this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(133, 23);
-            this.confirmButton.TabIndex = 13;
-            this.confirmButton.Text = "Confirm";
-            this.confirmButton.UseVisualStyleBackColor = true;
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.Location = new System.Drawing.Point(19, 278);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(133, 23);
-            this.cancelButton.TabIndex = 5;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            // 
             // downloadButton
             // 
             this.downloadButton.Location = new System.Drawing.Point(533, 352);
@@ -276,6 +278,17 @@
             this.inspectButton.TabIndex = 15;
             this.inspectButton.Text = "Inspect";
             this.inspectButton.UseVisualStyleBackColor = true;
+            this.inspectButton.Click += new System.EventHandler(this.inspectButton_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.javaRadio);
+            this.panel1.Controls.Add(this.netRadio);
+            this.panel1.Controls.Add(this.comRadio);
+            this.panel1.Location = new System.Drawing.Point(119, 133);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(216, 42);
+            this.panel1.TabIndex = 14;
             // 
             // AdminPanel
             // 
@@ -293,8 +306,11 @@
             this.Name = "AdminPanel";
             this.ShowIcon = false;
             this.Text = "Admin Panel";
+            this.Load += new System.EventHandler(this.AdminPanel_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,14 +332,15 @@
         private System.Windows.Forms.TextBox componentPath;
         private System.Windows.Forms.TextBox componentDescription;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton comRadio;
+        private System.Windows.Forms.RadioButton netRadio;
+        private System.Windows.Forms.RadioButton javaRadio;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button confirmButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button downloadButton;
         private System.Windows.Forms.Button inspectButton;
+        private System.Windows.Forms.Panel panel1;
     }
 }
