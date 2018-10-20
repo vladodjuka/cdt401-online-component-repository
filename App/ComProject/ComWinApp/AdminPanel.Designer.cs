@@ -31,11 +31,12 @@
             this.componentList = new System.Windows.Forms.ListBox();
             this.deleteButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioPanel = new System.Windows.Forms.Panel();
+            this.javaRadio = new System.Windows.Forms.RadioButton();
+            this.netRadio = new System.Windows.Forms.RadioButton();
+            this.comRadio = new System.Windows.Forms.RadioButton();
             this.confirmButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.comRadio = new System.Windows.Forms.RadioButton();
-            this.netRadio = new System.Windows.Forms.RadioButton();
-            this.javaRadio = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.componentDescription = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,9 +52,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.downloadButton = new System.Windows.Forms.Button();
             this.inspectButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.radioPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // componentList
@@ -67,16 +67,18 @@
             // 
             // deleteButton
             // 
+            this.deleteButton.Enabled = false;
             this.deleteButton.Location = new System.Drawing.Point(21, 352);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(104, 33);
             this.deleteButton.TabIndex = 1;
             this.deleteButton.Text = "Delete Component";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Controls.Add(this.radioPanel);
             this.groupBox1.Controls.Add(this.confirmButton);
             this.groupBox1.Controls.Add(this.cancelButton);
             this.groupBox1.Controls.Add(this.label5);
@@ -94,47 +96,18 @@
             this.groupBox1.Size = new System.Drawing.Size(387, 316);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Component Info";
+            this.groupBox1.Text = " ";
             // 
-            // confirmButton
+            // radioPanel
             // 
-            this.confirmButton.Location = new System.Drawing.Point(226, 278);
-            this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(133, 23);
-            this.confirmButton.TabIndex = 13;
-            this.confirmButton.Text = "Confirm";
-            this.confirmButton.UseVisualStyleBackColor = true;
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.Location = new System.Drawing.Point(19, 278);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(133, 23);
-            this.cancelButton.TabIndex = 5;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            // 
-            // comRadio
-            // 
-            this.comRadio.AutoSize = true;
-            this.comRadio.Location = new System.Drawing.Point(149, 12);
-            this.comRadio.Name = "comRadio";
-            this.comRadio.Size = new System.Drawing.Size(49, 17);
-            this.comRadio.TabIndex = 12;
-            this.comRadio.TabStop = true;
-            this.comRadio.Text = "COM";
-            this.comRadio.UseVisualStyleBackColor = true;
-            // 
-            // netRadio
-            // 
-            this.netRadio.AutoSize = true;
-            this.netRadio.Location = new System.Drawing.Point(87, 12);
-            this.netRadio.Name = "netRadio";
-            this.netRadio.Size = new System.Drawing.Size(47, 17);
-            this.netRadio.TabIndex = 11;
-            this.netRadio.TabStop = true;
-            this.netRadio.Text = "NET";
-            this.netRadio.UseVisualStyleBackColor = true;
+            this.radioPanel.Controls.Add(this.javaRadio);
+            this.radioPanel.Controls.Add(this.netRadio);
+            this.radioPanel.Controls.Add(this.comRadio);
+            this.radioPanel.Enabled = false;
+            this.radioPanel.Location = new System.Drawing.Point(119, 133);
+            this.radioPanel.Name = "radioPanel";
+            this.radioPanel.Size = new System.Drawing.Size(216, 42);
+            this.radioPanel.TabIndex = 14;
             // 
             // javaRadio
             // 
@@ -147,18 +120,64 @@
             this.javaRadio.Text = "JAVA";
             this.javaRadio.UseVisualStyleBackColor = true;
             // 
+            // netRadio
+            // 
+            this.netRadio.AutoSize = true;
+            this.netRadio.Location = new System.Drawing.Point(87, 12);
+            this.netRadio.Name = "netRadio";
+            this.netRadio.Size = new System.Drawing.Size(47, 17);
+            this.netRadio.TabIndex = 11;
+            this.netRadio.TabStop = true;
+            this.netRadio.Text = "NET";
+            this.netRadio.UseVisualStyleBackColor = true;
+            // 
+            // comRadio
+            // 
+            this.comRadio.AutoSize = true;
+            this.comRadio.Location = new System.Drawing.Point(149, 12);
+            this.comRadio.Name = "comRadio";
+            this.comRadio.Size = new System.Drawing.Size(49, 17);
+            this.comRadio.TabIndex = 12;
+            this.comRadio.TabStop = true;
+            this.comRadio.Text = "COM";
+            this.comRadio.UseVisualStyleBackColor = true;
+            // 
+            // confirmButton
+            // 
+            this.confirmButton.Enabled = false;
+            this.confirmButton.Location = new System.Drawing.Point(226, 278);
+            this.confirmButton.Name = "confirmButton";
+            this.confirmButton.Size = new System.Drawing.Size(133, 23);
+            this.confirmButton.TabIndex = 13;
+            this.confirmButton.Text = "Confirm";
+            this.confirmButton.UseVisualStyleBackColor = true;
+            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Enabled = false;
+            this.cancelButton.Location = new System.Drawing.Point(19, 278);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(133, 23);
+            this.cancelButton.TabIndex = 5;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(16, 147);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 13);
+            this.label5.Size = new System.Drawing.Size(95, 13);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Component Type";
+            this.label5.Text = "Component Type *";
             // 
             // componentDescription
             // 
             this.componentDescription.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.componentDescription.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.componentDescription.Enabled = false;
             this.componentDescription.Location = new System.Drawing.Point(19, 198);
             this.componentDescription.Multiline = true;
             this.componentDescription.Name = "componentDescription";
@@ -176,6 +195,7 @@
             // 
             // browseButton
             // 
+            this.browseButton.Enabled = false;
             this.browseButton.Font = new System.Drawing.Font("Viper Squadron Solid", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.browseButton.Location = new System.Drawing.Point(319, 104);
             this.browseButton.Name = "browseButton";
@@ -184,9 +204,12 @@
             this.browseButton.Text = "...";
             this.browseButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.browseButton.UseVisualStyleBackColor = true;
+            this.browseButton.Click += new System.EventHandler(this.browseButton_Click);
             // 
             // componentPath
             // 
+            this.componentPath.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.componentPath.Enabled = false;
             this.componentPath.Location = new System.Drawing.Point(119, 104);
             this.componentPath.Name = "componentPath";
             this.componentPath.Size = new System.Drawing.Size(190, 20);
@@ -198,12 +221,14 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(16, 107);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
+            this.label3.Size = new System.Drawing.Size(93, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Component Path";
+            this.label3.Text = "Component Path *";
             // 
             // componentAuthor
             // 
+            this.componentAuthor.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.componentAuthor.Enabled = false;
             this.componentAuthor.Location = new System.Drawing.Point(119, 72);
             this.componentAuthor.Name = "componentAuthor";
             this.componentAuthor.Size = new System.Drawing.Size(240, 20);
@@ -214,21 +239,24 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(16, 75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.Size = new System.Drawing.Size(102, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Component Author";
+            this.label2.Text = "Component Author *";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(16, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.Size = new System.Drawing.Size(99, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Component Name";
+            this.label1.Text = "Component Name *";
             // 
             // componentName
             // 
+            this.componentName.AllowDrop = true;
+            this.componentName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.componentName.Enabled = false;
             this.componentName.Location = new System.Drawing.Point(119, 40);
             this.componentName.Name = "componentName";
             this.componentName.Size = new System.Drawing.Size(240, 20);
@@ -246,12 +274,14 @@
             // 
             // editButton
             // 
+            this.editButton.Enabled = false;
             this.editButton.Location = new System.Drawing.Point(265, 352);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(119, 33);
             this.editButton.TabIndex = 4;
             this.editButton.Text = "Edit Component";
             this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // textBox1
             // 
@@ -263,15 +293,18 @@
             // 
             // downloadButton
             // 
+            this.downloadButton.Enabled = false;
             this.downloadButton.Location = new System.Drawing.Point(533, 352);
             this.downloadButton.Name = "downloadButton";
             this.downloadButton.Size = new System.Drawing.Size(119, 33);
             this.downloadButton.TabIndex = 14;
             this.downloadButton.Text = "Download";
             this.downloadButton.UseVisualStyleBackColor = true;
+            this.downloadButton.Click += new System.EventHandler(this.downloadButton_Click);
             // 
             // inspectButton
             // 
+            this.inspectButton.Enabled = false;
             this.inspectButton.Location = new System.Drawing.Point(399, 352);
             this.inspectButton.Name = "inspectButton";
             this.inspectButton.Size = new System.Drawing.Size(119, 33);
@@ -279,16 +312,6 @@
             this.inspectButton.Text = "Inspect";
             this.inspectButton.UseVisualStyleBackColor = true;
             this.inspectButton.Click += new System.EventHandler(this.inspectButton_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.javaRadio);
-            this.panel1.Controls.Add(this.netRadio);
-            this.panel1.Controls.Add(this.comRadio);
-            this.panel1.Location = new System.Drawing.Point(119, 133);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(216, 42);
-            this.panel1.TabIndex = 14;
             // 
             // AdminPanel
             // 
@@ -309,8 +332,8 @@
             this.Load += new System.EventHandler(this.AdminPanel_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.radioPanel.ResumeLayout(false);
+            this.radioPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,6 +364,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button downloadButton;
         private System.Windows.Forms.Button inspectButton;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel radioPanel;
     }
 }

@@ -8,11 +8,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NETComponentInspector;
 using ControllerUnit;
+using System.Net;
+using System.IO;
 
 namespace ComWinApp
 {
     public partial class AdminPanel : Form
     {
+        ComponentDb com = new ComponentDb();
         public AdminPanel()
         {
             InitializeComponent();
@@ -25,33 +28,47 @@ namespace ComWinApp
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            NETReflection netReflection = new NETReflectionImpl();
-            netReflection.getClasses("C:\\Users\\Vlado\\Desktop\\FruitShop.API.dll");
-            netReflection.getInterfaces("C:\\Users\\Vlado\\Desktop\\FruitShop.API.dll");
+            onAddOrEditComponent();
+            clearComponentListSelectionAndFields();
 
+        }
+
+        public void clearComponentListSelectionAndFields()
+        {
+            componentList.ClearSelected();
+            resetComponentInfo();
         }
 
         private void AdminPanel_Load(object sender, EventArgs e)
         {
-            ComponentDb com = new ComponentDb();
+            populateComponentList();
+        }
+
+        public void populateComponentList()
+        {
+            componentList.Items.Clear();
             List<Component> components = com.getComponents();
             foreach (Component comp in components)
             {
                 componentList.Items.Add(comp);
 
             }
-
         }
 
         private void componentList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            Component selectedComponent = componentList.SelectedItem as Component;
-            componentName.Text = selectedComponent.name;
-            componentAuthor.Text = selectedComponent.author;
-            componentDescription.Text = selectedComponent.description;
-            componentPath.Text = selectedComponent.path;
-            setComponentInfo(selectedComponent);
+            resetComponentInfo();
+            try
+            {
+                Component selectedComponent = componentList.SelectedItem as Component;
+                setComponentInfo(selectedComponent);
+                onSelectedComponent();
+            }
+            catch (Exception)
+            {
+                onDeselectedComponent();
+                return;
+            }
         }
 
         public void setComponentInfo(Component component)
@@ -69,6 +86,17 @@ namespace ComWinApp
             }
         }
 
+        public void resetComponentInfo()
+        {
+            componentName.Text = "";
+            componentAuthor.Text = "";
+            componentDescription.Text = "";
+            componentPath.Text = "";
+            netRadio.Checked = false;
+            javaRadio.Checked = false;
+            comRadio.Checked = false;
+        }
+
         private void inspectButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(componentPath.Text))
@@ -77,6 +105,199 @@ namespace ComWinApp
                 Inspection inspection = new Inspection(netReflection.getClasses(componentPath.Text), netReflection.getInterfaces(componentPath.Text));
                 inspection.Show();
             }
+        }
+
+        public void onSelectedComponent()
+        {
+            inspectButton.Enabled = true;
+            editButton.Enabled = true;
+            downloadButton.Enabled = true;
+            deleteButton.Enabled = true;
+            onComponentNormalState();
+        }
+
+        public void onDeselectedComponent()
+        {
+            inspectButton.Enabled = false;
+            editButton.Enabled = false;
+            downloadButton.Enabled = false;
+            deleteButton.Enabled = false;
+        }
+
+        public void onAddOrEditComponent()
+        {
+            componentName.Enabled = true;
+            componentAuthor.Enabled = true;
+            componentPath.Enabled = true;
+            browseButton.Enabled = true;
+            componentDescription.Enabled = true;
+            cancelButton.Enabled = true;
+            confirmButton.Enabled = true;
+            radioPanel.Enabled = true;
+        }
+
+        public void onComponentNormalState()
+        {
+            componentName.Enabled = false;
+            componentAuthor.Enabled = false;
+            componentPath.Enabled = false;
+            browseButton.Enabled = false;
+            componentDescription.Enabled = false;
+            cancelButton.Enabled = false;
+            confirmButton.Enabled = false;
+            radioPanel.Enabled = false;
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            onAddOrEditComponent();
+            componentName.Focus();
+        }
+
+        private void browseButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog choofdlog = new OpenFileDialog();
+            choofdlog.Filter = "All Files (*.*)|*.*";
+            choofdlog.FilterIndex = 1;
+            choofdlog.Multiselect = false;
+
+            if (choofdlog.ShowDialog() == DialogResult.OK)
+            {
+                string sFileName = choofdlog.FileName;
+                componentPath.Text = sFileName;
+            }
+        }
+
+        private void confirmButton_Click(object sender, EventArgs e)
+        {
+            if (!isAnyMandatoryFieldEmpty())
+            {
+                string path = componentPath.Text.Replace("\\", "\\\\");
+                int selectedIndex = componentList.SelectedIndex;
+                if (selectedIndex == -1)
+                {
+                    if (com.insertNewComponent(componentName.Text, componentDescription.Text, componentAuthor.Text, getSelectedRadio().ToLower(), path))
+                    {
+                        populateComponentList();
+                    }
+                }
+                else
+                {
+                    Component selectedComponent = componentList.SelectedItem as Component;
+                    if (com.editComponentInfo(selectedComponent.id.ToString(), componentName.Text, componentDescription.Text, componentAuthor.Text, getSelectedRadio().ToLower(), path))
+                    {
+                        populateComponentList();
+                        componentList.SelectedIndex = selectedIndex;
+                    }
+                }
+
+                onComponentNormalState();
+            }
+            else
+            {
+                MessageBox.Show("Not all fields' values provided or invalid values. Try again!");
+            }
+        }
+
+        public bool isAnyMandatoryFieldEmpty()
+        {
+            if (string.IsNullOrEmpty(componentName.Text))
+            {
+                return true;
+            }
+            if (string.IsNullOrEmpty(componentPath.Text) || !File.Exists(componentPath.Text))
+            {
+                return true;
+            }
+            if (radioPanel.Controls.OfType<RadioButton>()
+                                      .FirstOrDefault(r => r.Checked)==null)
+            {
+                return true;
+            }
+           
+            return false;
+        }
+
+        public string getSelectedRadio()
+        {
+            if (comRadio.Checked)
+            {
+                return comRadio.Text;
+            }
+            if (netRadio.Checked)
+            {
+                return netRadio.Text;
+            }
+            if (javaRadio.Checked)
+            {
+                return javaRadio.Text;
+            }
+            return "";
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Are you sure to delete selected item?",
+                                     "Confirm Delete",
+                                     MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                Component selectedComponent = componentList.SelectedItem as Component;
+                com.deleteComponent(selectedComponent.id.ToString(), selectedComponent.name);
+                populateComponentList();
+                resetComponentInfo();
+            }
+        }
+
+        private void downloadButton_Click(object sender, EventArgs e)
+        {
+            Component selectedComponent = componentList.SelectedItem as Component;
+            string componentNameAndExtension = selectedComponent.path;
+
+            int idNameExtension = componentNameAndExtension.LastIndexOf('\\');
+            
+            if (idNameExtension != -1)
+            {
+                componentNameAndExtension = componentNameAndExtension.Substring(idNameExtension + 1);
+                if(downloadFile(selectedComponent.path, componentNameAndExtension))
+                {
+                    MessageBox.Show("Successfully downloaded", "Success", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Failed download", "Failure", MessageBoxButtons.OK);
+                }
+            }
+        }
+
+        public bool downloadFile(string fullPath, string targetNameAndExtension)
+        {
+            try
+            {
+                Uri uri = new Uri(fullPath);
+                var client = new WebClient();
+                client.DownloadFile(uri, @"C:\Users\Vlado\Desktop\Download\" + targetNameAndExtension);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            onComponentNormalState();
+            if (componentList.SelectedIndex == -1)
+            {
+                resetComponentInfo();
+            }
+            else
+            {
+                Component selectedComponent = componentList.SelectedItem as Component;
+                setComponentInfo(selectedComponent);
+            }
+
         }
     }
 }
