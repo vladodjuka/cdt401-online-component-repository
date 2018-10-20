@@ -1,4 +1,4 @@
-In order to be able to connect MySQl and .NET you need:
+#In order to be able to connect MySQl and .NET you need:
 - Running Mysql server
 - Created database from the script file
 - Plugins:
