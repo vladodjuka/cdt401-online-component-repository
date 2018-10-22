@@ -49,9 +49,10 @@
             this.componentName = new System.Windows.Forms.TextBox();
             this.addButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchField = new System.Windows.Forms.TextBox();
             this.downloadButton = new System.Windows.Forms.Button();
             this.inspectButton = new System.Windows.Forms.Button();
+            this.resetSearch = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.radioPanel.SuspendLayout();
             this.SuspendLayout();
@@ -96,7 +97,7 @@
             this.groupBox1.Size = new System.Drawing.Size(387, 316);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = " ";
+            this.groupBox1.Text = " Component Info";
             // 
             // radioPanel
             // 
@@ -214,7 +215,6 @@
             this.componentPath.Name = "componentPath";
             this.componentPath.Size = new System.Drawing.Size(190, 20);
             this.componentPath.TabIndex = 5;
-            this.componentPath.TextChanged += new System.EventHandler(this.componentPath_TextChanged);
             // 
             // label3
             // 
@@ -283,13 +283,16 @@
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
-            // textBox1
+            // searchField
             // 
-            this.textBox1.Location = new System.Drawing.Point(21, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 20);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.Text = "Search for component...";
+            this.searchField.Location = new System.Drawing.Point(21, 33);
+            this.searchField.Name = "searchField";
+            this.searchField.Size = new System.Drawing.Size(159, 20);
+            this.searchField.TabIndex = 13;
+            this.searchField.Text = "Search for component...";
+            this.searchField.Click += new System.EventHandler(this.searchField_Click);
+            this.searchField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchField_KeyDown);
+            this.searchField.Leave += new System.EventHandler(this.searchField_Leave);
             // 
             // downloadButton
             // 
@@ -313,14 +316,25 @@
             this.inspectButton.UseVisualStyleBackColor = true;
             this.inspectButton.Click += new System.EventHandler(this.inspectButton_Click);
             // 
+            // resetSearch
+            // 
+            this.resetSearch.Location = new System.Drawing.Point(184, 33);
+            this.resetSearch.Name = "resetSearch";
+            this.resetSearch.Size = new System.Drawing.Size(62, 20);
+            this.resetSearch.TabIndex = 16;
+            this.resetSearch.Text = "RESET";
+            this.resetSearch.UseVisualStyleBackColor = true;
+            this.resetSearch.Click += new System.EventHandler(this.resetSearch_Click);
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 403);
+            this.Controls.Add(this.resetSearch);
             this.Controls.Add(this.inspectButton);
             this.Controls.Add(this.downloadButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.searchField);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.groupBox1);
@@ -361,9 +375,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button confirmButton;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox searchField;
         private System.Windows.Forms.Button downloadButton;
         private System.Windows.Forms.Button inspectButton;
         private System.Windows.Forms.Panel radioPanel;
+        private System.Windows.Forms.Button resetSearch;
     }
 }

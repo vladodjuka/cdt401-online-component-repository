@@ -15,15 +15,13 @@ namespace ComWinApp
 {
     public partial class AdminPanel : Form
     {
-        ComponentDb com = new ComponentDb();
+        public static string defaultSearchText = "Search for component...";
+
+        ComponentDb com = new ComponentDbImpl();
+
         public AdminPanel()
         {
             InitializeComponent();
-        }
-
-        private void componentPath_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -48,6 +46,17 @@ namespace ComWinApp
         {
             componentList.Items.Clear();
             List<Component> components = com.getComponents();
+            foreach (Component comp in components)
+            {
+                componentList.Items.Add(comp);
+
+            }
+        }
+
+        public void populateComponentListByName(string name)
+        {
+            componentList.Items.Clear();
+            List<Component> components = com.getComponentsByName(name);
             foreach (Component comp in components)
             {
                 componentList.Items.Add(comp);
@@ -210,11 +219,11 @@ namespace ComWinApp
                 return true;
             }
             if (radioPanel.Controls.OfType<RadioButton>()
-                                      .FirstOrDefault(r => r.Checked)==null)
+                                      .FirstOrDefault(r => r.Checked) == null)
             {
                 return true;
             }
-           
+
             return false;
         }
 
@@ -252,14 +261,11 @@ namespace ComWinApp
         private void downloadButton_Click(object sender, EventArgs e)
         {
             Component selectedComponent = componentList.SelectedItem as Component;
-            string componentNameAndExtension = selectedComponent.path;
+            string componentNameAndExtension = getNameAndExtension(selectedComponent.path);
 
-            int idNameExtension = componentNameAndExtension.LastIndexOf('\\');
-            
-            if (idNameExtension != -1)
+            if (componentNameAndExtension != null)
             {
-                componentNameAndExtension = componentNameAndExtension.Substring(idNameExtension + 1);
-                if(downloadFile(selectedComponent.path, componentNameAndExtension))
+                if (downloadFile(selectedComponent.path, componentNameAndExtension))
                 {
                     MessageBox.Show("Successfully downloaded", "Success", MessageBoxButtons.OK);
                 }
@@ -270,13 +276,31 @@ namespace ComWinApp
             }
         }
 
+        public string getNameAndExtension(string fullPath)
+        {
+
+            int idNameExtension = fullPath.LastIndexOf('\\');
+
+            if (idNameExtension != -1)
+            {
+                return fullPath.Substring(idNameExtension + 1);
+            }
+            return null;
+        }
+
         public bool downloadFile(string fullPath, string targetNameAndExtension)
         {
             try
             {
-                Uri uri = new Uri(fullPath);
                 var client = new WebClient();
-                client.DownloadFile(uri, @"C:\Users\Vlado\Desktop\Download\" + targetNameAndExtension);
+                Uri uri = new Uri(fullPath);
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                string downloadFolderPath = desktopPath + @"\Download\";
+
+                System.IO.FileInfo downloadFolder = new System.IO.FileInfo(downloadFolderPath);
+                downloadFolder.Directory.Create();
+
+                client.DownloadFile(uri, downloadFolderPath + targetNameAndExtension);
                 return true;
             }
             catch (Exception)
@@ -298,6 +322,37 @@ namespace ComWinApp
                 setComponentInfo(selectedComponent);
             }
 
+        }
+
+        private void searchField_Click(object sender, EventArgs e)
+        {
+            if (searchField.Text.Equals(defaultSearchText))
+            {
+                searchField.Text = "";
+            }
+        }
+
+        private void searchField_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(searchField.Text))
+            {
+                searchField.Text = defaultSearchText;
+            }
+        }
+
+        private void searchField_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                populateComponentListByName(searchField.Text);
+            }
+        }
+
+        private void resetSearch_Click(object sender, EventArgs e)
+        {
+            populateComponentList();
+            searchField.Text = defaultSearchText;
+            resetComponentInfo();
         }
     }
 }
