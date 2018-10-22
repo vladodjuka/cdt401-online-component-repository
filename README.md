@@ -11,7 +11,7 @@ This application is developed for the admin of the system and provides complete 
 ## Building / runing project and developpment
 In order to be able to connect MySQl and .NET you need:
 - Running MySQL server
-- Created database from the script file
+- Created database from the script file (located in the Database/MysqlScript directory)
 - Plugins:
 	- MySql Connector for .NET (https://dev.mysql.com/downloads/connector/net/)
 		- This is mandatory
