@@ -1,13 +1,10 @@
 package interfaces;
 
-import java.util.TreeMap;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.LinkedList;;
+import java.util.List;
 
 public interface Inspector {
-
-	@SuppressWarnings("rawtypes")
-	public TreeMap<String, LinkedList<Class>> inspect(String filePath) throws FileNotFoundException, IOException, ClassNotFoundException;
-	
+	public List<String> getClasses(String filePath) throws FileNotFoundException, IOException, ClassNotFoundException; 
+	public List<String> getInterfaces(String filePath) throws FileNotFoundException, IOException, ClassNotFoundException;
 }
