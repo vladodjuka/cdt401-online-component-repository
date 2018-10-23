@@ -10,7 +10,7 @@ namespace NETComponentInspector
     public class NETReflectionImpl : NETReflection
     {
 
-        public List<string> getClasses(String componentPath)
+        public List<string> getClasses(string componentPath)
         {
             List<string> classes = new List<string>();
             try
@@ -31,7 +31,7 @@ namespace NETComponentInspector
             }
         }
 
-        public List<string> getInterfaces(String componentPath)
+        public List<string> getInterfaces(string componentPath)
         {
             List<string> interfaces = new List<string>();
             try

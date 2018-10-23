@@ -8,7 +8,7 @@ namespace NETComponentInspector
 {
     public interface NETReflection
     {
-        List<String> getClasses(String componentPath);
-        List<String> getInterfaces(String componentPath);
+        List<String> getClasses(string componentPath);
+        List<String> getInterfaces(string componentPath);
     }
 }

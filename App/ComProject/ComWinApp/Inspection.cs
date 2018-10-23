@@ -24,13 +24,20 @@ namespace ComWinApp
 
         public void renderData()
         {
-            foreach (string item in classes)
+            if (classes != null)
             {
-                classesField.Text += "- " + item + "\n";
+                foreach (string item in classes)
+                {
+                    classesField.Text += "- " + item + "\n";
+                }
             }
-            foreach (string item in interfaces)
+            if (interfaces != null)
             {
-                interfacesField.Text += "- " + item + "\n";
+
+                foreach (string item in interfaces)
+                {
+                    interfacesField.Text += "- " + item + "\n";
+                }
             }
         }
 

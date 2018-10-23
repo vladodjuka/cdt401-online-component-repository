@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllerUnit", "Controlle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NETComponentInspector", "NETComponentInspector\NETComponentInspector.csproj", "{B3B32130-706A-466B-848E-371DA7475C6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COMComponentInspector", "COMComponentInspector\COMComponentInspector.csproj", "{9495E1EF-7653-48B8-9506-757AC169FCEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JAVAComponentInspector", "JAVAComponentInspector\JAVAComponentInspector.csproj", "{BE532376-E861-4073-917E-ED87DB09BEBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{B3B32130-706A-466B-848E-371DA7475C6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3B32130-706A-466B-848E-371DA7475C6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3B32130-706A-466B-848E-371DA7475C6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9495E1EF-7653-48B8-9506-757AC169FCEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9495E1EF-7653-48B8-9506-757AC169FCEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9495E1EF-7653-48B8-9506-757AC169FCEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9495E1EF-7653-48B8-9506-757AC169FCEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE532376-E861-4073-917E-ED87DB09BEBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE532376-E861-4073-917E-ED87DB09BEBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE532376-E861-4073-917E-ED87DB09BEBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE532376-E861-4073-917E-ED87DB09BEBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
