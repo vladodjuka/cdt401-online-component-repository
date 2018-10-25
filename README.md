@@ -18,3 +18,6 @@ In order to be able to connect MySQl and .NET you need:
 	 - MySQL for Visual Studio (https://dev.mysql.com/downloads/windows/visualstudio/)
 		 - This is not mandatory but highly suggested (if you need Entity Framework,..)
 	 * ALL IN ONE SERVER AND PLUGINS (https://dev.mysql.com/downloads/mysql/)
+	 - Ikvm-8.0.5449.1 or later
+- Add references for installed/downloaded plugins (Mysql.Data and Ikvm Core)
+- If exceptions are thrown and everything is connected and should be working try adding references for all ikvm dll files instead of just Core file
