@@ -6,12 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NETComponentInspector;
 using ControllerUnit;
 using System.Net;
 using System.IO;
-using COMComponentInspector;
-using JAVAComponentInspector;
 
 namespace ComWinApp
 {
@@ -112,24 +109,10 @@ namespace ComWinApp
         {
             if (!string.IsNullOrEmpty(componentPath.Text))
             {
-                if (netRadio.Checked)
-                {
-                    NETReflection netReflection = new NETReflectionImpl();
-                    Inspection inspection = new Inspection(netReflection.getClasses(componentPath.Text), netReflection.getInterfaces(componentPath.Text));
-                    inspection.Show();
-                }
-                if (comRadio.Checked)
-                {
-                    COMReflection comReflection = new COMReflectionImpl();
-                    Inspection inspection = new Inspection(comReflection.getClasses(componentPath.Text), comReflection.getInterfaces(componentPath.Text));
-                    inspection.Show();
-                }
-                if (javaRadio.Checked)
-                {
-                    JAVAReflection javaReflection = new JAVAReflectionImpl();
-                    Inspection inspection = new Inspection(javaReflection.getClasses(componentPath.Text), javaReflection.getInterfaces(componentPath.Text));
-                    inspection.Show();
-                }
+                Component selectedComponent = componentList.SelectedItem as Component;
+
+                Inspection inspection = new Inspection(com.reflectComponentClasses(selectedComponent), com.reflectComponentInterfaces(selectedComponent));
+                inspection.Show();
             }
         }
 

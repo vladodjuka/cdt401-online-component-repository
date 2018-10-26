@@ -7,63 +7,42 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
+using COM_inspectLib;
+
 
 namespace COMComponentInspector
 {
     public class COMReflectionImpl : COMReflection
     {
-        [DllImport("oleaut32.dll", PreserveSig = false)]
-        public static extern ITypeLib LoadTypeLib([In, MarshalAs(UnmanagedType.LPWStr)] string typelib);
+
+        Iinspect comInspector = new inspect();
+
+        string classesCom = "classes_list";
+        string interfacesCom = "interfaces_list";
 
         public List<string> getClasses(string componentPath)
         {
             List<string> classes = new List<string>();
 
-            ITypeLib typeLibrary = LoadTypeLib(componentPath);
+            comInspector.inspect_component(componentPath, ref interfacesCom, ref classesCom);
 
-            for (int i = 0; i < typeLibrary.GetTypeInfoCount(); i++)
-            {
+            string[] classesArray = classesCom.Split(';');
 
-                ITypeInfo tt;
-               // typeLibrary.GetType
-                typeLibrary.GetTypeInfo(i, out tt);
-                string name;
-                //string dd;
-                //int ss;
-                //string jj;
-                //typeLibrary.
-                //tt.GetDocumentation(i, out name, null, null, null);
-                Type type = tt.GetType();
-                //System.Runtime.InteropServices.ComTypes.TYPEKIND typeKind;
-                //typeLibrary.GetTypeInfoType(i, out typeKind);
-               // Type type = typeKind.GetType();
+            classes.AddRange(classesArray.Where(x => !string.IsNullOrEmpty(x)));
 
-                if (type.IsClass)
-                {
-                    classes.Add(type.Name);
-                }
-
-            }
             return classes;
         }
 
         public List<string> getInterfaces(string componentPath)
         {
             List<string> interfaces = new List<string>();
-            ITypeLib typeLibrary = LoadTypeLib(componentPath);
 
-            for (int i = 0; i < typeLibrary.GetTypeInfoCount(); i++)
-            {
-                System.Runtime.InteropServices.ComTypes.TYPEKIND typeKind;
-                typeLibrary.GetTypeInfoType(i, out typeKind);
-                Type type = typeKind.GetType();
+            comInspector.inspect_component(componentPath, ref interfacesCom, ref classesCom);
 
-                if (type.IsClass)
-                {
-                    interfaces.Add(type.Name);
-                }
+            string[] interfacesArray = interfacesCom.Split(';');
 
-            }
+            interfaces.AddRange(interfacesArray.Where(x=>!string.IsNullOrEmpty(x)));
+
             return interfaces;
         }
 

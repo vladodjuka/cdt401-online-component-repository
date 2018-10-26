@@ -1,0 +1,4 @@
+C:\Users\Vlado\Desktop\cdt401-online-component-repository\cdt401-online-component-repository\App\ComProject\JAVAComponentInspector\bin\Debug\JAVAComponentInspector.dll
+C:\Users\Vlado\Desktop\cdt401-online-component-repository\cdt401-online-component-repository\App\ComProject\JAVAComponentInspector\bin\Debug\JAVAComponentInspector.pdb
+C:\Users\Vlado\Desktop\cdt401-online-component-repository\cdt401-online-component-repository\App\ComProject\JAVAComponentInspector\obj\Debug\JAVAComponentInspector.dll
+C:\Users\Vlado\Desktop\cdt401-online-component-repository\cdt401-online-component-repository\App\ComProject\JAVAComponentInspector\obj\Debug\JAVAComponentInspector.pdb

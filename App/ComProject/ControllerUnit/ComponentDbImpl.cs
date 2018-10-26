@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using NETComponentInspector;
+using COMComponentInspector;
+using JAVAComponentInspector;
 
 namespace ControllerUnit
 {
@@ -140,6 +143,46 @@ namespace ControllerUnit
                 con.Close();
                 return false;
             }
+        }
+
+        public List<string> reflectComponentClasses(Component component)
+        {
+            List<string> classes;
+            switch (component.type)
+            {
+                case "net":
+                    NETReflection netReflection = new NETReflectionImpl();
+                    classes = netReflection.getClasses(component.path); break;
+                case "java":
+                    JAVAReflection javaReflection = new JAVAReflectionImpl();
+                    classes = javaReflection.getClasses(component.path); break;
+                case "com":
+                    COMReflection comReflection = new COMReflectionImpl();
+                    classes = comReflection.getClasses(component.path); break;
+                default: classes = null; break;
+            }
+
+            return classes;
+        }
+
+        public List<string> reflectComponentInterfaces(Component component)
+        {
+            List<string> interfaces;
+            switch (component.type)
+            {
+                case "net":
+                    NETReflection netReflection = new NETReflectionImpl();
+                    interfaces = netReflection.getInterfaces(component.path); break;
+                case "java":
+                    JAVAReflection javaReflection = new JAVAReflectionImpl();
+                    interfaces = javaReflection.getInterfaces(component.path); break;
+                case "com":
+                    COMReflection comReflection = new COMReflectionImpl();
+                    interfaces = comReflection.getInterfaces(component.path); break;
+                default: interfaces = null; break;
+            }
+
+            return interfaces;
         }
     }
 }

@@ -48,6 +48,20 @@
     <Compile Include="ComponentDbImpl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\COMComponentInspector\COMComponentInspector.csproj">
+      <Project>{9495e1ef-7653-48b8-9506-757ac169fcea}</Project>
+      <Name>COMComponentInspector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JAVAComponentInspector\JAVAComponentInspector.csproj">
+      <Project>{be532376-e861-4073-917e-ed87db09bebb}</Project>
+      <Name>JAVAComponentInspector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NETComponentInspector\NETComponentInspector.csproj">
+      <Project>{b3b32130-706a-466b-848e-371da7475c6e}</Project>
+      <Name>NETComponentInspector</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

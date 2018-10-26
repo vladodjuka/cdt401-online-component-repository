@@ -42,14 +42,15 @@
                                     </div>
                                 </form>
                                 <!--Radio buttons for component name selection-->
-                                <form action="#" id="machine-types">
-                                    <div>
-                                        <input name="componentName" type="radio" id="fruitShop_radio" checked="checked" value="FruitShopCom" />
+                                <form id="machine" runat="server">
+                                    <asp:RadioButtonList ID="radioContainer" OnSelectedIndexChanged="radioContainer_SelectedIndexChanged" AutoPostBack="true" runat="server">
+                                        <%--<input name="componentName" type="radio" id="fruitShop_radio" checked="checked" value="FruitShopCom" />
                                         <label for="fruitShop_radio">FruitShopCom</label>
                                         <br />
-                                        <br />
+                                        <br />--%>
+                                        <%--<asp:RadioButton ID="RadioButton1" runat="server"  Text="FruitShop"/>--%>
 
-                                        <input name="componentName" type="radio" id="ejb_radio" value="EJBComponent" />
+                                        <%--<input name="componentName" type="radio" id="ejb_radio" value="EJBComponent" />
                                         <label for="ejb_radio">EJBComponent</label>
                                         <br />
                                         <br />
@@ -60,8 +61,8 @@
                                         <br />
 
                                         <input name="componentName" type="radio" id="net_radio" value="NETComponent" />
-                                        <label for="net_radio">NETComponent</label>
-                                    </div>
+                                        <label for="net_radio">NETComponent</label>--%>
+                                    </asp:RadioButtonList>
                                 </form>
                             </div>
                         </li>
@@ -85,8 +86,8 @@
                     <li>
                         <!--Header of the item-->
                         <div class="mainContainerHeader" id="1">
-                            <span>#Comp FruitShopCom</span>
-                            <span class="right downloadSection"><img src="images/download.png" alt="Download icon"/></span>
+                            <span>#Comp <span id="componentHeaderTitle" runat="server"></span></span>
+                            <span class="right downloadSection"><a id="componentDownloadLink" href="" runat="server"><img src="images/download.png" alt="Download icon"/></a></span>
                         </div>
                         <!-- Body of first collapsable item -->
                         <div class="mainContainerBody" style="height:555px !important">
@@ -96,15 +97,20 @@
                                 <!--LEFT SIDE-->
                                 <div class="col s6">
                                     <br />
-                                    <br />
-                                    <br />
                                     <div class="radar-chart-container">
+                                        <ul class="collection">
+                                        <li class="collection-item" runat="server">Classes: <p id="classesReflection" runat="server"></p></li>
+                                            </ul>
                                     </div>
                                 </div>
                                 <!-- END LEFT SIDE-->
 
                                 <!-- BEGINING // CHART, BUTTONS, TABLE-->
                                 <div class="col s6">
+                                    <br />
+                                    <ul class="collection">
+                                        <li class="collection-item" runat="server">Interfaces: <p id="interfacesReflection" runat="server"></p></li>
+                                            </ul>
                                     <!--LINE CHART-->
                                     <!--<canvas id="line-chart-{{index}}" width="200" height="150" style="margin-top: 9px;"></canvas>-->
                                     <!--END LINE CHART-->
@@ -119,9 +125,10 @@
                                     <!-- START // TABLE-->
                                     <ul class="collection" style="margin-top: 9px;">
 
-                                        <%-- <li class="collection-item">Fuel: {{totalFuel}} L</li>
-                                        <li class="collection-item">Distance: {{totalDistance}} km</li>
-                                        <li class="collection-item">Load: {{totalLoad}} kg</li>--%>
+                                        <li class="collection-item" runat="server">Component name: <span id="componentName" runat="server"></span></li>
+                                        <li class="collection-item" runat="server">Component author: <span id="componentAuthor" runat="server"></span></li>
+                                        <li class="collection-item" runat="server">Component type: <span id="componentType" runat="server"></span></li>
+                                        <li class="collection-item" runat="server">Component description: <span id="componentDescription" runat="server"></span></li>
                                     </ul>
                                     <!-- END // TABLE-->
                                 </div>

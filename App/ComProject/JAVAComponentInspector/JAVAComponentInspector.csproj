@@ -119,7 +119,7 @@
       <HintPath>..\..\..\..\..\ikvm-8.0.5449.1\bin\IKVM.Runtime.JNI.dll</HintPath>
     </Reference>
     <Reference Include="javaReflection_componentTechnologies_mdh_cco">
-      <HintPath>..\javaReflection.componentTechnologies.mdh.cco\javaReflection_componentTechnologies_mdh_cco.dll</HintPath>
+      <HintPath>..\..\javaReflection.componentTechnologies.mdh.cco\javaReflection_componentTechnologies_mdh_cco.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
