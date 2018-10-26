@@ -1,0 +1,26 @@
+HKCR
+{
+	COM_inspect.inspect.1 = s 'inspect Class'
+	{
+		CLSID = s '{F227C3B7-B3F6-4B09-8D14-4C87D296F5FC}'
+	}
+	COM_inspect.inspect = s 'inspect Class'
+	{		
+		CurVer = s 'COM_inspect.inspect.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {F227C3B7-B3F6-4B09-8D14-4C87D296F5FC} = s 'inspect Class'
+		{
+			ProgID = s 'COM_inspect.inspect.1'
+			VersionIndependentProgID = s 'COM_inspect.inspect'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{AF3F3851-163E-49F6-93F5-70D77E02980A}'
+			Version = s '1.0'
+		}
+	}
+}

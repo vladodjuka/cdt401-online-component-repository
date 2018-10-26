@@ -1,0 +1,6 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Platforms\Win32\PlatformToolsets\v140_xp\Toolset.targets(36,5): warning MSB8003: Could not find WindowsSdkDir_71A variable from the registry.  TargetFrameworkVersion or PlatformToolset may be set to an invalid version number.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(366,5): warning MSB8003: Could not find WindowsSDKDir variable from the registry.  TargetFrameworkVersion or PlatformToolset may be set to an invalid version number.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (COM_inspectPS.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+TRACKER : error TRK0005: Failed to locate: "midl.exe". The system cannot find the file specified.
+  
+  

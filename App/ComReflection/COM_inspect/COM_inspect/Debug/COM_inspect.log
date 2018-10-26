@@ -1,0 +1,100 @@
+﻿Build started 26/10/2018 16:08:58.
+     1>Project "J:\Ce PC\Bureau\comdll\COM_inspect\COM_inspect\COM_inspect.vcxproj" on node 2 (build target(s)).
+     1>PrepareForBuild:
+         Creating directory "J:\Ce PC\Bureau\comdll\COM_inspect\Debug\".
+       InitializeBuildStatus:
+         Creating "Debug\COM_inspect.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       Midl:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\midl.exe /D _DEBUG /W1 /nologo /char signed /env win32 /Oicf /h "COM_inspect_i.h" /iid "COM_inspect_i.c" /proxy "COM_inspect_p.c" /tlb "Debug\COM_inspect.tlb" /robust COM_inspect.idl 
+         Processing .\COM_inspect.idl
+         COM_inspect.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\oaidl.idl
+         oaidl.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\objidl.idl
+         objidl.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\unknwn.idl
+         unknwn.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\wtypes.idl
+         wtypes.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\basetsd.h
+         basetsd.h
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\guiddef.h
+         guiddef.h
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\ocidl.idl
+         ocidl.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\oleidl.idl
+         oleidl.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\servprov.idl
+         servprov.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\urlmon.idl
+         urlmon.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\msxml.idl
+         msxml.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\shobjidl.idl
+         shobjidl.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\docobj.idl
+         docobj.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\shtypes.idl
+         shtypes.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\comcat.idl
+         comcat.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\propidl.idl
+         propidl.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\prsht.idl
+         prsht.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\propsys.idl
+         propsys.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\StructuredQueryCondition.idl
+         StructuredQueryCondition.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\ObjectArray.idl
+         ObjectArray.idl
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\oaidl.acf
+         oaidl.acf
+         Processing C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\ocidl.acf
+         ocidl.acf
+       ClCompile:
+         J:\VisualStudio\2010\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _USRDLL /D _WINDLL /D _UNICODE /D UNICODE /D _ATL_DLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\COM_inspect.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         J:\VisualStudio\2010\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _USRDLL /D _WINDLL /D _UNICODE /D UNICODE /D _ATL_DLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\COM_inspect.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt COM_inspect.cpp inspect.cpp
+         inspect.cpp
+         COM_inspect.cpp
+         Generating Code...
+         J:\VisualStudio\2010\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _USRDLL /D _WINDLL /D _UNICODE /D UNICODE /D _ATL_DLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt COM_inspect_i.c
+         COM_inspect_i.c
+         J:\VisualStudio\2010\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _USRDLL /D _WINDLL /D _UNICODE /D UNICODE /D _ATL_DLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt dllmain.cpp
+         dllmain.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /D _UNICODE /D UNICODE /l"0x0409" /IDebug\ /nologo /fo"Debug\COM_inspect.res" COM_inspect.rc 
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\COM_inspect.dll.embed.manifest.res" Debug\COM_inspect_manifest.rc 
+       Link:
+         J:\VisualStudio\2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"J:\Ce PC\Bureau\comdll\COM_inspect\Debug\COM_inspect.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\COM_inspect.def" /MANIFEST /ManifestFile:"Debug\COM_inspect.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"J:\Ce PC\Bureau\comdll\COM_inspect\Debug\COM_inspect.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /DLL Debug\COM_inspect.res
+         Debug\COM_inspect.dll.embed.manifest.res
+         Debug\COM_inspect.obj
+         Debug\COM_inspect_i.obj
+         Debug\dllmain.obj
+         Debug\inspect.obj
+         Debug\stdafx.obj
+            Creating library J:\Ce PC\Bureau\comdll\COM_inspect\Debug\COM_inspect.lib and object J:\Ce PC\Bureau\comdll\COM_inspect\Debug\COM_inspect.exp
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\COM_inspect.dll.embed.manifest" /manifest Debug\COM_inspect.dll.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\COM_inspect.dll.embed.manifest.res" Debug\COM_inspect_manifest.rc 
+       LinkEmbedManifest:
+         J:\VisualStudio\2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"J:\Ce PC\Bureau\comdll\COM_inspect\Debug\COM_inspect.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\COM_inspect.def" /MANIFEST /ManifestFile:"Debug\COM_inspect.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"J:\Ce PC\Bureau\comdll\COM_inspect\Debug\COM_inspect.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /DLL Debug\COM_inspect.res
+         Debug\COM_inspect.dll.embed.manifest.res
+         Debug\COM_inspect.obj
+         Debug\COM_inspect_i.obj
+         Debug\dllmain.obj
+         Debug\inspect.obj
+         Debug\stdafx.obj
+         COM_inspect.vcxproj -> J:\Ce PC\Bureau\comdll\COM_inspect\Debug\COM_inspect.dll
+       RegisterOutput:
+         regsvr32 /s "J:\Ce PC\Bureau\comdll\COM_inspect\Debug\COM_inspect.dll"
+       FinalizeBuildStatus:
+         Deleting file "Debug\COM_inspect.unsuccessfulbuild".
+         Touching "Debug\COM_inspect.lastbuildstate".
+     1>Done Building Project "J:\Ce PC\Bureau\comdll\COM_inspect\COM_inspect\COM_inspect.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:14.18
