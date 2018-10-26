@@ -45,3 +45,14 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+App\ComProject\NETComponentInspector\obj\*
+App\ComProject\NETComponentInspector\obj\*
+App/ComProject/NETComponentInspector/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+App/ComProject/NETComponentInspector/obj/Debug/
+App/ComProject/JAVAComponentInspector/obj/
+*.suo
+App/ComProject/COMComponentInspector/obj/
+App/ComProject/COMComponentInspector/obj/
+App/ComProject/ControllerUnit/obj/
+App\ComProject\ComProject\obj\Debug\
+App/ComProject/ComProject/obj/
