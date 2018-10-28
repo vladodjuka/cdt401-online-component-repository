@@ -44,8 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Component.cs" />
-    <Compile Include="ComponentDb.cs" />
+    <Compile Include="ComponentDbAdmin.cs" />
     <Compile Include="ComponentDbImpl.cs" />
+    <Compile Include="ComponentDbUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

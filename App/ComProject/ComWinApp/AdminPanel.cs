@@ -16,7 +16,7 @@ namespace ComWinApp
     {
         public static string defaultSearchText = "Search for component...";
 
-        ComponentDb com = new ComponentDbImpl();
+        ComponentDbAdmin com = new ComponentDbImpl();
 
         public AdminPanel()
         {

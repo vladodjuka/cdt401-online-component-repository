@@ -13,13 +13,31 @@ namespace ComProject {
     public partial class Dashboard {
         
         /// <summary>
-        /// machine control.
+        /// mainForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm machine;
+        protected global::System.Web.UI.HtmlControls.HtmlForm mainForm;
+        
+        /// <summary>
+        /// search control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox search;
+        
+        /// <summary>
+        /// confirmSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button confirmSearch;
         
         /// <summary>
         /// radioContainer control.
@@ -46,7 +64,7 @@ namespace ComProject {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor componentDownloadLink;
+        protected global::System.Web.UI.WebControls.ImageButton componentDownloadLink;
         
         /// <summary>
         /// classesReflection control.

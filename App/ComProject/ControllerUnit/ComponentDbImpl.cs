@@ -10,7 +10,7 @@ using JAVAComponentInspector;
 
 namespace ControllerUnit
 {
-    public class ComponentDbImpl : ComponentDb
+    public class ComponentDbImpl : ComponentDbAdmin, ComponentDbUser
     {
         public static readonly string connectionString = "server=localhost;user id=root;database=compproject;password=vlado";
         public static readonly string retrieveComponents = "SELECT * from component";
