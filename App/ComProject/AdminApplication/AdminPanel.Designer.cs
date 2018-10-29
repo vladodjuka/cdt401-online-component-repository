@@ -1,4 +1,4 @@
-﻿namespace ComWinApp
+﻿namespace AdminApplication
 {
     partial class AdminPanel
     {

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ComProject {
+namespace WebApplication {
     
     
     public partial class Dashboard {

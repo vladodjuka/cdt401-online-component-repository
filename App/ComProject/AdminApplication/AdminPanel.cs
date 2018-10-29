@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 using System.Windows.Forms;
 using ControllerUnit;
-using System.Net;
-using System.IO;
 
-namespace ComWinApp
+namespace AdminApplication
 {
     public partial class AdminPanel : Form
     {

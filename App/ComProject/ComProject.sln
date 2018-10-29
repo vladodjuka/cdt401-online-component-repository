@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComProject", "ComProject\ComProject.csproj", "{06510F93-77A6-4B92-A99E-16319D4D5C93}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{06510F93-77A6-4B92-A99E-16319D4D5C93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComWinApp", "ComWinApp\ComWinApp.csproj", "{C41B2BA3-CB92-4DC5-8FF6-B84FE6E2E5BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminApplication", "AdminApplication\AdminApplication.csproj", "{C41B2BA3-CB92-4DC5-8FF6-B84FE6E2E5BD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllerUnit", "ControllerUnit\ControllerUnit.csproj", "{A53E7C68-0BEF-4433-950A-B0A059729F99}"
 EndProject
