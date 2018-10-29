@@ -93,7 +93,7 @@
                                         <br />
                                         <div class="radar-chart-container">
                                             <ul class="collection">
-                                                <li class="collection-item" runat="server">Classes:
+                                                <li class="collection-item" runat="server"><b>Classes: </b>
                                                     <p id="classesReflection" runat="server"></p>
                                                 </li>
                                             </ul>
@@ -105,7 +105,7 @@
                                     <div class="col s6">
                                         <br />
                                         <ul class="collection">
-                                            <li class="collection-item" runat="server">Interfaces:
+                                            <li class="collection-item" runat="server"><b>Interfaces: </b>
                                                 <p id="interfacesReflection" runat="server"></p>
                                             </li>
                                         </ul>
