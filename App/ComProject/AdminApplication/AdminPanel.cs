@@ -349,6 +349,7 @@ namespace AdminApplication
             populateComponentList();
             searchField.Text = defaultSearchText;
             resetComponentInfo();
+            onDeselectedComponent();
         }
     }
 }
