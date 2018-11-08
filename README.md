@@ -21,3 +21,4 @@ In order to be able to connect MySQl and .NET you need:
 	 - Ikvm-8.0.5449.1 or later
 - Add references for installed/downloaded plugins (Mysql.Data and Ikvm Core)
 - If exceptions are thrown and everything is connected and should be working try adding references for all ikvm dll files instead of just Core file
+- For the COM reflection, the com reflection project needs to be built which will create a COM assembly. Afterwards, in the COMComponentInspector component, the reference has to be set to the correct assembly (from COM assemblies), find COM_inspectLib and add it to the references. Also, remove the one that is already there, as the assembly path needs to be updated on each machine.
